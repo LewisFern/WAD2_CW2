@@ -9,8 +9,17 @@
   "author": "Lewis Fern",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "express-openid-connect": "^2.15.0",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
     "mustache": "^4.2.0",
-    "nedb": "^1.8.0"
+    "mustache-express": "^1.3.2",
+    "nedb": "^1.8.0",
+    "passport": "^0.6.0",
+    "passport-auth0": "^1.4.3",
+    "passport-google-oauth20": "^2.0.0"
   }
 }
