@@ -1,3 +1,4 @@
+const nedb = require("nedb");
 const express = require("express");
 const { auth } = require('express-openid-connect');
 require('dotenv').config()
@@ -13,13 +14,15 @@ const config = {
     issuerBaseURL: process.env.ISSUER,
   };
 
-
-app.set("views", "views");
+app.set("views",  [__dirname + '/views', __dirname + '/views/Fitness', __dirname + '/views/healthLifestyle',
+ __dirname + '/views/Nutrition', __dirname + '/views/user']);
 app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(express.static("public"));
 app.use(auth(config));
+
+const db = new nedb({ filename : "goals.db", autoload: true });
 
 const router = require('./routes/healthAppRoute');
 app.use('/', router);

@@ -2,24 +2,40 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Fitness
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Gym Workouts</a></li>
-                      <li><a class="dropdown-item" href="#">Home Workouts</a></li>
-                      <li><a class="dropdown-item" href="#">Running Workouts</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Fitness
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Gym Workouts</a></li>
-                        <li><a class="dropdown-item" href="#">Home Workouts</a></li>
-                        <li><a class="dropdown-item" href="#">Running Workouts</a></li>
+                      <li><a class="dropdown-item" href="/gymworkouts/">Gym Workouts</a></li>
+                      <li><a class="dropdown-item" href="/homeworkouts/">Home Workouts</a></li>
+                      <li><a class="dropdown-item" href="/runningworkouts/">Running Workouts</a></li>
                     </ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Healthy Lifestyle
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/mentalwellbeing/">Mental Wellbeing</a></li>
+                        <li><a class="dropdown-item" href="/sleepandtiredness/">Sleep and Tiredness</a></li>
+                        <li><a class="dropdown-item" href="/smokingadvice/">Smoking Advice</a></li>
+                    </ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Nutrition
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/carbs/">Carbs</a></li>
+                          <li><a class="dropdown-item" href="/fats/">Fats</a></li>
+                          <li><a class="dropdown-item" href="/fruit/">Fruit</a></li>
+                          <li><a class="dropdown-item" href="/protein/">Protein</a></li>
+                          <li><a class="dropdown-item" href="/vegetables/">Vegetables</a></li>
+                        </ul>
+                </ul>
+                <ul class="navbar-nav ms-auto me-0">
                     <li class="nav-item">
                         <a class="nav-link" href="../public/about/">About</a>
                     </li>
@@ -29,6 +45,9 @@
                         <a class="nav-link" href="/login/">Login</a>
                     </li>
                     <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile/">Profile</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/logout/">Logout</a>
                     </li>
