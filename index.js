@@ -13,16 +13,13 @@ const config = {
     issuerBaseURL: process.env.ISSUER,
   };
 
-  // auth router attaches /login, /logout, and /callback routes to the baseURL
+
+app.set("views", "views");
+app.set('view engine', 'ejs');
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
+app.use(express.static("public"));
 app.use(auth(config));
-
-const path = require('path');
-const public = path.join(__dirname,'public');
-app.use(express.static(public));
-
-const mustache = require('mustache-express');
-app.engine('mustache', mustache());
-app.set('view engine', 'mustache');
 
 const router = require('./routes/healthAppRoute');
 app.use('/', router);

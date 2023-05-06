@@ -9,7 +9,9 @@
   "author": "Lewis Fern",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",
+    "ehs": "^1.0.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-openid-connect": "^2.15.0",
