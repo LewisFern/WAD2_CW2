@@ -1,20 +1,35 @@
 <html>
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('partials/head'); %>
 </head>
 <body class="container">
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('partials/header'); %>
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1>test</h1>>
+        <div class="mt-4 p-5 h-75 bg-secondary text-white rounded">
+            <h1 class="display-6 text-center">Gym Workouts</h1>
+            <div class="row">
+                <div class="rounded mx-auto text-center">
+            <img class="img-thumbnail" style="width:auto; height:30vh" src="https://i.ytimg.com/vi/VqXLFffiU2I/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLALTMBWkV832Zc-9umDmcWn3tIqlQ">
+            </div>
+          </div>
+          <br>
+          <div>
+                <p class="text-center fw-semibold .fs-6 text-wrap">Gym workouts typically involve exercising with equipment such as weights, machines, 
+                    and cardio equipment in order to improve strength, endurance, and overall fitness. 
+                    Different types of workouts can be designed to achieve specific fitness goals, 
+                    such as weight loss, muscle building, or improved cardiovascular health. 
+                    It is important to warm up before exercising and cool down afterwards to prevent injury and reduce muscle soreness.
+                    Proper form and technique should also be emphasized to maximize the effectiveness of the workout and avoid injury.
+                    Consistency and progression are key factors in achieving fitness goals through gym workouts.</p>
+          </div>
         </div>
     </main>
 
-    <footer>
-        <%- include('../partials/footer'); %>
+    <footer class=" text-center text-lg-start fixed-bottom">
+        <%- include('partials/footer'); %>
     </footer>
 
 </body>

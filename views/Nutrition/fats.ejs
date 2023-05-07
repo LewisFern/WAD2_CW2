@@ -1,20 +1,35 @@
 <html>
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('partials/head'); %>
 </head>
 <body class="container">
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('partials/header'); %>
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1>test</h1>>
+        <div class="mt-4 p-5 h-75 bg-secondary text-white rounded">
+            <h1 class="display-6 text-center">Fats</h1>
+            <div class="row">
+                <div class="rounded mx-auto text-center">
+            <img class="img-thumbnail" style="width:auto; height:30vh" src="https://s3.amazonaws.com/img.mynetdiary.com/src/article/fats.jpeg">
+            </div>
+          </div>
+          <br>
+          <div>
+                <p class="text-center fw-semibold .fs-6 text-wrap">Fats are one of the three macronutrients essential to a healthy and balanced diet,
+                    alongside carbohydrates and protein. They are a source of energy for the body, and play important roles in maintaining healthy skin and hair,
+                    absorbing certain vitamins, and supporting brain function. There are several types of dietary fats, including saturated, unsaturated, and trans fats.
+                    Saturated fats are found in animal products like meat and dairy, while unsaturated fats are found in foods like nuts, seeds, and oils.
+                    Trans fats are typically found in processed foods and are considered the unhealthiest type of fat. 
+                    Consuming too much saturated and trans fats can increase the risk of heart disease, while consuming more unsaturated fats can have positive health effects.
+                    It is important to choose healthy sources of fats as part of a balanced diet, and to consume them in moderation.</p>
+          </div>
         </div>
     </main>
 
-    <footer>
-        <%- include('../partials/footer'); %>
+    <footer class=" text-center text-lg-start fixed-bottom">
+        <%- include('partials/footer'); %>
     </footer>
 
 </body>

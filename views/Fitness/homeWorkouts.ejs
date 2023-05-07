@@ -1,20 +1,36 @@
 <html>
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('partials/head'); %>
 </head>
 <body class="container">
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('partials/header'); %>
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1>test</h1>>
+        <div class="mt-4 p-5 h-75 bg-secondary text-white rounded">
+            <h1 class="display-6 text-center">Home Workouts</h1>
+            <div class="row">
+                <div class="rounded mx-auto text-center">
+            <img class="img-thumbnail" style="width:auto; height:30vh" src="https://osmose-it.s3.amazonaws.com/_m7u2BK_SOO8hUmCxWqE11sUTnKzRMM0/_.png">
+            </div>
+          </div>
+          <br>
+          <div>
+                <p class="text-center fw-semibold .fs-6 text-wrap">
+                    Home workouts involve exercising at home without the need for gym equipment or a fitness center. 
+                    Home workouts can be performed using bodyweight exercises, resistance bands, dumbbells, 
+                    or other household items to improve strength, flexibility, and cardiovascular health. 
+                    With the use of online resources, it is possible to follow guided workout videos or 
+                    virtual personal training sessions to create effective and varied workout routines. 
+                    Home workouts are convenient and flexible, as they can be done at any time and in any space. 
+                    However, it is important to have a safe and suitable exercise area and to properly warm up and cool down to avoid injury.</p>
+          </div>
         </div>
     </main>
 
-    <footer>
-        <%- include('../partials/footer'); %>
+    <footer class=" text-center text-lg-start fixed-bottom">
+        <%- include('partials/footer'); %>
     </footer>
 
 </body>

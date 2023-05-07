@@ -1,20 +1,33 @@
 <html>
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('partials/head'); %>
 </head>
 <body class="container">
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('partials/header'); %>
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1>test</h1>>
+        <div class="mt-4 p-5 h-75 bg-secondary text-white rounded">
+            <h1 class="display-6 text-center">Fruit</h1>
+            <div class="row">
+                <div class="rounded mx-auto text-center">
+            <img class="img-thumbnail" style="width:auto; height:30vh" src="https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-3foodgroups_fruits_detailfeature.jpg?sfvrsn=64942d53_4">
+            </div>
+          </div>
+          <br>
+          <div>
+                <p class="text-center fw-semibold .fs-6 text-wrap">Fruit is a nutritious and delicious part of a healthy diet. 
+                    Fruits are naturally low in calories and high in fiber, vitamins, minerals, and antioxidants that promote overall health and reduce the risk of chronic disease. 
+                    They come in a wide variety of colors, flavors, and textures, and can be enjoyed fresh, frozen, or dried. 
+                    Eating a variety of fruits is important to ensure that the body receives a range of nutrients.  
+                    While fruits are a healthy addition to any diet, it is important to consume them in moderation as they contain natural sugars.</p>
+          </div>
         </div>
     </main>
 
-    <footer>
-        <%- include('../partials/footer'); %>
+    <footer class=" text-center text-lg-start fixed-bottom">
+        <%- include('partials/footer'); %>
     </footer>
 
 </body>

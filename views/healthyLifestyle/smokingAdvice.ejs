@@ -1,20 +1,36 @@
 <html>
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('partials/head'); %>
 </head>
 <body class="container">
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('partials/header'); %>
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1>test</h1>>
+        <div class="mt-4 p-5 h-75 bg-secondary text-white rounded">
+            <h1 class="display-6 text-center">Smoking Advice</h1>
+            <div class="row">
+                <div class="rounded mx-auto text-center">
+            <img class="img-thumbnail" style="width:auto; height:30vh" src="https://www.saffronhealth.co.uk/images/PHE_SmokingCessationAlwaysOn_16x9_Screen.jpg">
+            </div>
+          </div>
+          <br>
+          <div>
+                <p class="text-center fw-semibold .fs-6 text-wrap">Smoking is a harmful habit that can have serious negative effects on one's health,
+                     including an increased risk of cancer, heart disease, and respiratory illness. Quitting smoking can be challenging,
+                    but it is one of the most important steps an individual can take to improve their health and reduce their risk of chronic diseases.
+                    Nicotine replacement therapy, medication, counseling, and support from friends and family can all be effective tools to aid in smoking cessation.
+                    It is also important to avoid triggers such as alcohol or stressful situations that may lead to smoking. The benefits of quitting smoking are numerous, 
+                    including improved lung function, reduced risk of disease, increased energy, and improved quality of life. 
+                    Even reducing the number of cigarettes smoked can have significant health benefits. 
+                    Seeking help and support can increase the chances of successfully quitting smoking and improving overall health.</p>
+          </div>
         </div>
     </main>
 
-    <footer>
-        <%- include('../partials/footer'); %>
+    <footer class=" text-center text-lg-start fixed-bottom">
+        <%- include('partials/footer'); %>
     </footer>
 
 </body>

@@ -1,20 +1,34 @@
 <html>
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('partials/head'); %>
 </head>
 <body class="container">
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('partials/header'); %>
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1>test</h1>>
+        <div class="mt-4 p-5 h-75 bg-secondary text-white rounded">
+            <h1 class="display-6 text-center">Vegetables</h1>
+            <div class="row">
+                <div class="rounded mx-auto text-center">
+            <img class="img-thumbnail" style="width:auto; height:30vh" src="https://cdn.britannica.com/17/196817-050-6A15DAC3/vegetables.jpg">
+            </div>
+          </div>
+          <br>
+          <div>
+                <p class="text-center fw-semibold .fs-6 text-wrap">Vegetables are an important part of a healthy and balanced diet. 
+                    They are packed with essential vitamins, minerals, and fiber that are important for overall health and disease prevention. 
+                    Vegetables come in a wide variety of colors and flavors, and can be eaten raw or cooked in many different ways. 
+                    Dark, leafy greens like kale, spinach, and broccoli are particularly nutrient-dense, but all vegetables are beneficial for health. 
+                    Eating a variety of vegetables can help to reduce the risk of chronic diseases such as heart disease, stroke, and certain types of cancer. 
+                    It is recommended that adults consume at least 2-3 cups of vegetables per day as part of a healthy diet.</p>
+          </div>
         </div>
     </main>
 
-    <footer>
-        <%- include('../partials/footer'); %>
+    <footer class=" text-center text-lg-start fixed-bottom">
+        <%- include('partials/footer'); %>
     </footer>
 
 </body>

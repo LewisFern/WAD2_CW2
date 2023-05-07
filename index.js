@@ -16,7 +16,7 @@ const config = {
     issuerBaseURL: process.env.ISSUER,
   };
 
-app.set("views",  [__dirname + '/views', __dirname + '/views/Fitness', __dirname + '/views/healthLifestyle',
+app.set("views",  [__dirname + '/views', __dirname + '/views/Fitness', __dirname + '/views/healthyLifestyle',
  __dirname + '/views/Nutrition', __dirname + '/views/user']);
 app.set('view engine', 'ejs');
 app.use(express.json());

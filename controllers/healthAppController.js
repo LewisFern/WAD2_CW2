@@ -4,7 +4,7 @@ const db = new Datastore({ filename: path.join(__dirname, '../goals.db'), autolo
 
 
 exports.show_about = function(req, res) {
-    res.render("about");
+    res.render("about", { isAuthenticated: false })
 }
 exports.show_gym_workouts = function(req, res) {
     res.render("gymWorkouts", { isAuthenticated: true })

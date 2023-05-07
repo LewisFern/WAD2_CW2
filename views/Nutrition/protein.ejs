@@ -1,20 +1,34 @@
 <html>
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('partials/head'); %>
 </head>
 <body class="container">
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('partials/header'); %>
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1>test</h1>>
+        <div class="mt-4 p-5 h-75 bg-secondary text-white rounded">
+            <h1 class="display-6 text-center">Protein</h1>
+            <div class="row">
+                <div class="rounded mx-auto text-center">
+            <img class="img-thumbnail" style="width:auto; height:30vh" src="https://www.eatingwell.com/thmb/XmunrZ-9FA3-Ayov8qyebbQNUxE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/what-is-protein-fed94e49e3144aba84c815ed3623a51c.jpg">
+            </div>
+          </div>
+          <br>
+          <div>
+                <p class="text-center fw-semibold .fs-6 text-wrap">Protein is an essential macronutrient that is necessary for the growth and repair of tissues in the body. 
+                    It is made up of amino acids, which are the building blocks of proteins. Protein is found in a variety of foods, including meat, poultry, fish, eggs, dairy products, 
+                    beans, legumes, and some grains. Animal sources of protein tend to be complete proteins, containing all of the essential amino acids the body needs, 
+                    while plant sources of protein may require more careful combination to ensure adequate intake of all essential amino acids. 
+                    Protein is also important for maintaining muscle mass, supporting immune function, and regulating hormones. While protein is important for overall health, 
+                    it is important to consume it in moderation as consuming too much protein can put a strain on the kidneys and lead to other health problems.</p>
+          </div>
         </div>
     </main>
 
-    <footer>
-        <%- include('../partials/footer'); %>
+    <footer class=" text-center text-lg-start fixed-bottom">
+        <%- include('partials/footer'); %>
     </footer>
 
 </body>

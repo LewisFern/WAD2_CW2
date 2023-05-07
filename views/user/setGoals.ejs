@@ -8,23 +8,31 @@
     </header>
 
     <main>
-        <div class="mt-4 p-5 bg-secondary text-white rounded container-fluid mt-3">
+        <h1 class="display-6 text-center">Set Goals</h1>
+        <div class="mt-4 p-5 h-75 bg-secondary text-white rounded container-fluid mt-3">
+            <div class="container m-vh-100 d-flex justify-content-center ">
             <form method="POST" action="/savegoal">
+            <div class="mb-3">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="goal" required>
-                <br>
+            </div>
+            <div class="mb-3">   
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" required></textarea>
-                <br>
+            </div>    
+            <div class="mb-3">  
                 <label for="deadline">Deadline:</label>
                 <input type="date" id="deadline" name="date" required>
-                <br>
+            </div>  
+            <div class="text-center">
                 <input type="submit" value="Save">
+            </div>
             </form>
+        </div>
         </div>
     </main>
 
-    <footer>
+    <footer class="text-center text-lg-start fixed-bottom">
         <%- include('../partials/footer'); %>
     </footer>
 

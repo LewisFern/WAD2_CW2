@@ -1,20 +1,34 @@
 <html>
 <head>
-    <%- include('../partials/head'); %>
+    <%- include('partials/head'); %>
 </head>
 <body class="container">
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('partials/header'); %>
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1>test</h1>>
+        <div class="mt-4 p-5 h-75 bg-secondary text-white rounded">
+            <h1 class="display-6 text-center">Carbohydrates</h1>
+            <div class="row">
+                <div class="rounded mx-auto text-center">
+            <img class="img-thumbnail" style="width:auto; height:30vh" src="https://health.clevelandclinic.org/wp-content/uploads/sites/3/2018/01/Carbs-613046884-770x533-1-650x428.jpg">
+            </div>
+          </div>
+          <br>
+          <div>
+                <p class="text-center fw-semibold .fs-6 text-wrap">Carbohydrates, or carbs, are one of the three macronutrients essential to a balanced diet,
+                     alongside protein and fat.
+                     They are the primary source of energy for the body and are found in a variety of foods such as grains, fruits, vegetables, and legumes.
+                     There are two main types of carbohydrates: simple and complex. Simple carbohydrates, also known as sugars, are found in foods like candy, soda, and baked goods. 
+                     Complex carbohydrates, on the other hand, are found in foods like whole grains, vegetables, and legumes, and are higher in fiber, vitamins, and minerals. 
+                     It is important to choose healthy sources of carbohydrates as part of a balanced diet to maintain energy levels, support overall health, and prevent chronic disease.</p>
+          </div>
         </div>
     </main>
 
-    <footer>
-        <%- include('../partials/footer'); %>
+    <footer class=" text-center text-lg-start fixed-bottom">
+        <%- include('partials/footer'); %>
     </footer>
 
 </body>

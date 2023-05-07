@@ -6,7 +6,8 @@
     <header>
         <%- include('../partials/header'); %>
     </header>
-
+    <main>
+        <h1 class="display-6 text-center">Edit Goal</h1>
     <form method="POST" action="/update_goal/<%= goal._id %>">
         <label for="date">Date:</label>
         <input type="date" id="date" name="date" value="<%= goal.date %>" required>
@@ -23,6 +24,7 @@
         <input type="submit" value="Update Goal">
       </form>
 
+    </main>
     <footer>
         <%- include('../partials/footer'); %>
     </footer>
