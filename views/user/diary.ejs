@@ -8,8 +8,20 @@
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1>test</h1>>
+        <div class="mt-4 p-5 bg-secondary text-white rounded container-fluid mt-3">
+            <% if (goals.length > 0) { %>
+                <% for (let i = 0; i < goals.length; i++) { %>
+                  <div class="goal">
+                    <h2><%= goals[i].date %></h2>
+                    <h3><%= goals[i].goal %></h3>
+                    <p><%= goals[i].description %></p>
+                    <a href="/editGoal/<%= goals[i]._id %>">Edit</a>
+                    <a href="/deleteGoal/<%= goals[i]._id %>">Delete</a>
+                  </div>
+                <% } %>
+              <% } else { %>
+                <p>You have no goals yet.</p>
+              <% } %>
         </div>
     </main>
 

@@ -8,8 +8,19 @@
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1>test</h1>>
+        <div class="mt-4 p-5 bg-secondary text-white rounded container-fluid mt-3">
+            <form method="POST" action="/savegoal">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="goal" required>
+                <br>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <br>
+                <label for="deadline">Deadline:</label>
+                <input type="date" id="deadline" name="date" required>
+                <br>
+                <input type="submit" value="Save">
+            </form>
         </div>
     </main>
 

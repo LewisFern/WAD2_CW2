@@ -1,8 +1,13 @@
+const Datastore = require('nedb');
+const path = require('path');
+const db = new Datastore({ filename: path.join(__dirname, '../goals.db'), autoload: true });
+
+
 exports.show_about = function(req, res) {
     res.render("about");
 }
 exports.show_gym_workouts = function(req, res) {
-    res.render("gymWorkouts", { isAuthenticated: true });
+    res.render("gymWorkouts", { isAuthenticated: true })
 }
 exports.show_home_workouts = function(req, res) {
     res.render("homeworkouts", { isAuthenticated: true })
@@ -35,7 +40,13 @@ exports.show_vegetables = function(req, res) {
     res.render("vegetables", { isAuthenticated: true })
 }
 exports.show_profile = function(req, res) {
-    res.render("profile", { isAuthenticated: true });
+    res.render("profile", { isAuthenticated: true })
+}
+exports.show_set_goals = function(req, res) {
+    res.render("setgoals", { isAuthenticated: true })
+}
+exports.show_diary = function(req, res) {
+    res.render("diary", { isAuthenticated: true })
 }
 
 exports.show_landing_page = function (req, res) {
@@ -45,3 +56,47 @@ exports.show_landing_page = function (req, res) {
     user: req.oidc.user,
 });
 };
+
+exports.save_goal = function (req, res) {
+    // get the data from the form
+    const goal = {
+      date: req.body.date,
+      goal: req.body.goal,
+      description: req.body.description,
+      user_id: req.oidc.user.sub
+    };
+
+    db.loadDatabase(function (err) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Database loaded successfully');
+        }
+    });
+  
+    // insert the data into the database
+    db.insert(goal, function (err, newDoc) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(newDoc);
+      }
+    });
+  
+    res.redirect("/");
+  };
+
+  exports.view_diary = function(req, res) {
+    // Retrieve goals for the current user
+    db.find({ user_id: req.oidc.user.sub }, function(err, docs) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(docs);
+        res.render("diary", { goals: docs, isAuthenticated: true });
+      }
+    });
+  };
+
+        
+  

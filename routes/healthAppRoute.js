@@ -17,5 +17,10 @@ router.get('/fruit', controller.show_fruit);
 router.get('/protein', controller.show_protein);
 router.get('/vegetables', controller.show_vegetables);
 router.get('/profile', controller.show_profile);
+router.get('/setgoals', controller.show_set_goals);
+router.post('/savegoal', controller.save_goal);
+router.get('/diary', controller.view_diary)
+
+
 
 module.exports = router;

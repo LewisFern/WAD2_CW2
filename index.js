@@ -4,6 +4,8 @@ const { auth } = require('express-openid-connect');
 require('dotenv').config()
 
 const app = express();
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const config = {
     authRequired: false,
@@ -23,6 +25,14 @@ app.use(express.static("public"));
 app.use(auth(config));
 
 const db = new nedb({ filename : "goals.db", autoload: true });
+
+db.loadDatabase(function (err) {
+  if (err) {
+      console.log(err);
+  } else {
+      console.log('Database loaded successfully');
+  }
+});
 
 const router = require('./routes/healthAppRoute');
 app.use('/', router);
