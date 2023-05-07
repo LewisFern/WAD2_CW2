@@ -52,7 +52,7 @@ exports.show_edit_goals = function(req, res) {
     res.render("editgoals", { isAuthenticated: true });
   };
   
-
+//shows the landing pager
 exports.show_landing_page = function (req, res) {
     console.log(req.oidc.isAuthenticated());
     res.render("landingPage", { title: "Heath App",
@@ -62,14 +62,16 @@ exports.show_landing_page = function (req, res) {
 };
 
 exports.save_goal = function (req, res) {
-    // get the data from the form
+    // gets the data from the form and assigns it to variable goal
     const goal = {
       date: req.body.date,
       goal: req.body.goal,
       description: req.body.description,
+      //assigns user_id to their auth0 id gathered from the user logging in
       user_id: req.oidc.user.sub
     };
 
+    //function to ensure the database loads correctly
     db.loadDatabase(function (err) {
         if (err) {
             console.log(err);
@@ -86,12 +88,11 @@ exports.save_goal = function (req, res) {
         console.log(newDoc);
       }
     });
-  
+    //redirect to landingpage
     res.redirect("/");
   };
-
+  //function to view the diary
   exports.view_diary = function(req, res) {
-    // Retrieve goals for the current user, sorted by completion status and then by date
     db.find({ user_id: req.oidc.user.sub }).sort({ completed: 1, date: 1 }).exec(function(err, docs) {
       if (err) {
         console.log(err);
@@ -101,9 +102,9 @@ exports.save_goal = function (req, res) {
       }
     });
   };
-
+  //function to delete goal
   exports.delete_goal = function(req, res) {
-    const goalId = req.body._id;
+    const goalId = req.body._id;//requests the id of the goal the user is trying to delete
   
     db.remove({ _id: goalId }, {}, function(err, numRemoved) {
       if (err) {
