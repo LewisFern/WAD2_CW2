@@ -48,6 +48,10 @@ exports.show_set_goals = function(req, res) {
 exports.show_diary = function(req, res) {
     res.render("diary", { isAuthenticated: true })
 }
+exports.show_edit_goals = function(req, res) {
+    res.render("editgoals", { isAuthenticated: true });
+  };
+  
 
 exports.show_landing_page = function (req, res) {
     console.log(req.oidc.isAuthenticated());
@@ -87,8 +91,8 @@ exports.save_goal = function (req, res) {
   };
 
   exports.view_diary = function(req, res) {
-    // Retrieve goals for the current user
-    db.find({ user_id: req.oidc.user.sub }, function(err, docs) {
+    // Retrieve goals for the current user, sorted by completion status and then by date
+    db.find({ user_id: req.oidc.user.sub }).sort({ completed: 1, date: 1 }).exec(function(err, docs) {
       if (err) {
         console.log(err);
       } else {
@@ -97,6 +101,35 @@ exports.save_goal = function (req, res) {
       }
     });
   };
+
+  exports.delete_goal = function(req, res) {
+    const goalId = req.body._id;
+  
+    db.remove({ _id: goalId }, {}, function(err, numRemoved) {
+      if (err) {
+        console.log(err);
+        res.redirect("/");
+      } else {
+        console.log(`${numRemoved} goal(s) deleted`);
+        res.redirect("/diary");
+      }
+    });
+  };
+
+  exports.update_goal = function(req, res) {
+    const id = req.params.id;
+    const { date, goal, description, completed } = req.body;
+
+  db.update({ _id: id }, { $set: { date, goal, description, completed } }, {}, (err, numReplaced) => {
+    if (err) {
+      console.error(err);
+      res.sendStatus(500);
+    } else {
+      res.redirect('/');
+    }
+  });
+}
+
 
         
   

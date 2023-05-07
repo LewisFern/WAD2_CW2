@@ -9,19 +9,28 @@
 
     <main>
         <div class="mt-4 p-5 bg-secondary text-white rounded container-fluid mt-3">
-            <% if (goals.length > 0) { %>
-                <% for (let i = 0; i < goals.length; i++) { %>
-                  <div class="goal">
-                    <h2><%= goals[i].date %></h2>
-                    <h3><%= goals[i].goal %></h3>
-                    <p><%= goals[i].description %></p>
-                    <a href="/editGoal/<%= goals[i]._id %>">Edit</a>
-                    <a href="/deleteGoal/<%= goals[i]._id %>">Delete</a>
-                  </div>
-                <% } %>
-              <% } else { %>
-                <p>You have no goals yet.</p>
-              <% } %>
+            <h1>My Goals</h1>
+            <% if (goals.length === 0) { %>
+              <p>You have no goals yet.</p>
+            <% } else { %>
+              <ul>
+                <% goals.forEach(function(goal) { %>
+                  <li>
+                    <p>Date: <%= goal.date %></p>
+                    <p>Goal: <%= goal.goal %></p>
+                    <p>Description: <%= goal.description %></p>
+                    <form method="POST" action="/deletegoal">
+                      <input type="hidden" name="_id" value="<%= goal._id %>">
+                      <button type="submit">Delete</button>
+                    </form>
+                    <form method="GET" action="/editgoal">
+                        <input type="hidden" name="_id" value="<%= goal._id %>">
+                        <button type="submit">Edit</button>
+                      </form>
+                  </li>
+                <% }); %>
+              </ul>
+            <% } %>
         </div>
     </main>
 

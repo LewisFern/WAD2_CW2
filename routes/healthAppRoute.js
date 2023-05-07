@@ -20,7 +20,9 @@ router.get('/profile', controller.show_profile);
 router.get('/setgoals', controller.show_set_goals);
 router.post('/savegoal', controller.save_goal);
 router.get('/diary', controller.view_diary)
-
+router.post('/deletegoal', controller.delete_goal);
+router.get('/editgoal/:id', controller.show_edit_goals);
+router.post('/updategoal', controller.update_goal);
 
 
 module.exports = router;

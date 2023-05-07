@@ -1,0 +1,31 @@
+<html>
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <form method="POST" action="/update_goal/<%= goal._id %>">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" value="<%= goal.date %>" required>
+        <br>
+        <label for="goal">Goal:</label>
+        <input type="text" id="goal" name="goal" value="<%= goal.goal %>" required>
+        <br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"><%= goal.description %></textarea>
+        <br>
+        <label for="completed">Completed:</label>
+        <input type="checkbox" id="completed" name="completed" <% goal.completed ? 'checked' : '' %>>
+        <br>
+        <input type="submit" value="Update Goal">
+      </form>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>
